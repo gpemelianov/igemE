@@ -2,8 +2,8 @@
 title: "igem_part.Rmd"
 author: Emelianov Georgii
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 ```{r, echo=FALSE}
 no <- c(1, 2, 3, 4, 5)
