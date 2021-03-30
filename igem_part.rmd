@@ -1,0 +1,217 @@
+---
+title: "igem_part.Rmd"
+author: Emelianov Georgii
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r, echo=FALSE}
+no <- c(1, 2, 3, 4, 5)
+
+team_name <- c("NEFU-China", "Moscow", "EPFL", "Queens-Canada", "Nantes")
+
+project_title <- c("BOLD", "HaploSense", "Espress'EAU", "Velcrion", "The A3 project")
+
+project_year <- c("2020", "2020", "2020", "2020", "2020")
+
+wiki_page <- c("https://2020.igem.org/Team:NEFU_China", " https://2020.igem.org/Team:Moscow", "https://2020.igem.org/Team:EPFL", "https://2020.igem.org/Team:Queens_Canada", "https://2020.igem.org/Team:Nantes")
+
+igem_team <- data.frame(no, team_name, project_title, project_year, wiki_page)
+
+#knitr::kable(std, format="markdown")
+knitr::kable(igem_team)
+```
+
+```{r, echo=FALSE}
+no <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)
+
+part_id <- c("BBa_K1316002",
+"BBa_K2559005",
+"BBa_K3457012", 
+"BBa_K3350857", 
+"BBa_K2913020", 
+"BBa_K2913022", 
+"BBa_K216008", 
+"BBa_K322312", 
+"BBa_K1316006", 
+"BBa_K3350859", 
+"BBa_K3350860", 
+"BBa_K3350862", 
+"BBa_K3350858")
+
+part_name <- c("yqjF",
+"EGFP",
+"Cytosolic-abundant heat soluble protein 106094",
+"yhaJ",
+"TrrnB",
+"pBAD",
+"LuxAB",
+"LuxCDE",
+"nemA-nfsA-nfsB",
+"yqjF1st",
+"yqjF2nd",
+"yqjF3rd",
+"yhaJ1st")
+
+part_type <- c("Promoter",
+"Coding",
+"Coding",
+"Coding",
+"Terminator",
+"Promoter",
+"Coding",
+"Coding",
+"Coding",
+"Promoter",
+"Promoter",
+"Promoter",
+"Coding")
+
+team_id <- c(1,1,1,1,1,1,1,1,1,1,1,1,1)
+
+igem_part <- data.frame (no, part_id, part_name, part_type, team_id)
+knitr::kable(igem_part)
+```
+
+
+
+```{r, echo=FALSE}
+no <- c(1)
+
+part_id <- c("BBa_K3636000")
+
+part_name <- c("CasX (Cas12e)")
+
+part_type <- c("Coding")
+
+team_id <- c(2)
+
+igem_part <- data.frame (no, part_id, part_name, part_type, team_id)
+knitr::kable(igem_part)
+```
+
+```{r, echo=FALSE}
+no <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17)
+
+part_id <- c("BBa_K3600000",
+"BBa_K3600001",
+"BBa_K3600002",
+"BBa_K3600003",
+"BBa_K3600004",
+"BBa_K3600006",
+"BBa_K3600007",
+"BBa_K3600008",
+"BBa_K3600009",
+"BBa_K3600010",
+"BBa_K3600011",
+"BBa_K3600012",
+"BBa_K3600013",
+"BBa_K3600014",
+"BBa_K3600015",
+"BBa_K3600016",
+"BBa_K3600017")
+
+part_name <- c("HSP12 promoter part plasmid",
+"TRX2 promoter part plasmid",
+"YCF1 promoter part plasmid",
+"GSH1 promoter part plasmid",
+"GLR1 promoter part plasmid",
+"prHSP12-yomScarlet-I-tADH1",
+"prTRX2-yomScarlet-I-tADH1",
+"prYCF1-yomScarlet-I-tADH1",
+"prGSH1-yomScarlet-I-tADH1",
+"mScarlet-I reporter gene",
+"prGLR1-yomScarlet-I-tADH1",
+"Lys2-GFP dropout multi-gene backbone",
+"Lys2-HSP12pr-mScarleti cassette",
+"Lys2-TRX2pr-mScarleti cassette",
+"Lys2-YCF1pr-mScarleti cassette",
+"Lys2-GSH1pr-mScarleti cassette",
+"Lys2-GLR1pr-mScarleti cassette")
+
+
+part_type <- c("Regulatory",
+"Regulatory",
+"Regulatory",
+"Regulatory",
+"Regulatory",
+"Cassette",
+"Cassette",
+"Cassette",
+"Cassette",
+"Reporter",
+"Cassette",
+"Cassette",
+"Cassette",
+"Cassette",
+"Cassette",
+"Cassette",
+"Cassette")
+
+team_id <- c(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3)
+
+igem_part <- data.frame (no, part_id, part_name, part_type, team_id)
+knitr::kable(igem_part)
+```
+
+
+```{r, echo=FALSE}
+no <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
+
+part_id <- c("BBa_K3515000",
+"BBa_K3515001",
+"BBa_K3515002",
+"BBa_K3515003",
+"BBa_K3515004",
+"BBa_K3515005",
+"BBa_K3515006",
+"BBa_K3515007",
+"BBa_K3515008",
+"BBa_K3515009",
+"BBa_K3515010",
+"BBa_K3515011",
+"BBa_K3515012",
+"BBa_K3515013",
+"BBa_K3515014",
+"BBa_K3515015")
+
+part_name <- c("E coil alpha helix with cysteine to be used with a K coil alpha helix for protein immobilization",
+"K coil alpha helix with cysteine to be used with a E coil alpha helix for protein immobilization",
+"Synechococcus Phosphate Binding Protein with cysteine modification(s) to bind to a biosensor",
+"Troponin C, a calcium binding protein with cysteine modification(s) to bind to a biosensor",
+"Potassium binding protein with cysteine modification(s) to bind to a biosensor",
+"Glucose binding protein with cysteine modification(s) to bind to a biosensor",
+"Synechococcus Phosphate Binding Protein with cysteine modification(s) and FRET to monitor phosphate",
+"Troponin C, a calcium binding protein with cysteine modification(s) to bind to a biosensor and FRET",
+"Potassium binding protein with cysteine modification(s) to bind to a biosensor and FRET to monitor p",
+"Glucose binding protein with cysteine modification(s) to bind to a biosensor and FRET to monitor glu",
+"Vitamin D Receptor Binding Protein with cysteine modification(s) to bind to a biosensor",
+"Vitamin D receptor binding protein with cysteine modification(s) to bind to a biosensor and FRET to",
+"Parathyroid Hormone Receptor with cysteine modification(s) to bind to a biosensor",
+"Parathyroid Hormone Receptor with cysteine modification(s) and FRET to monitor PTH levels using a b",
+"Alpha-Klotho Binding Protein with cysteine modification(s) to bind to a biosensor",
+"Alpha-Klotho Binding Protein with cysteine modification(s) and FRET to monitor phosphate levels usin")
+
+
+part_type <- c("Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding",
+"Coding")
+
+
+team_id <- c(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4)
+
+igem_part <- data.frame (no, part_id, part_name, part_type, team_id)
+knitr::kable(igem_part)
