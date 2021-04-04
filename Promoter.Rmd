@@ -1,6 +1,110 @@
 ---
-title: "BBa_I0500"
-author: "Emelianov Georgii"
-date: "4/1/2021"
+title: "Promoter BBa_I0500"
+author: "Georgii"
+date: "03 04 2021"
 output: html_document
+---
 
+```{r, echo=FALSE}
+
+Part_name <- c("BBa_I0500")
+Short_description <- c("Inducible pBad/araC promoter")
+Part_type <- c("Regulatory")
+Nickname <- c("pBad/araC")
+Designer <- c("Sri Kosuri")
+Link <- c("http://parts.igem.org/wiki/index.php?title=Part:BBa_I0500")
+
+Part <- data.frame(Part_name, 
+                        Short_description, 
+                        Part_type, 
+                        Nickname, 
+                        Designer,
+                        Link)
+#knitr::kable(std, format = "markdown")
+knitr::kable(Part)
+
+```
+
+```{r, echo=FALSE}
+
+no <- c(1)
+team_name <- c("Jilin_China")
+project_title <- c("iGAME")
+                
+project_year <- c(2020) 
+                  
+wiki_page <- c("https://2020.igem.org/Team:Jilin_China")
+ 
+
+igem_team <- data.frame(no, 
+                        team_name, 
+                        project_title, 
+                        project_year, 
+                        wiki_page)
+#knitr::kable(std, format = "markdown")
+knitr::kable(igem_team)
+
+```
+
+```{r, echo=FALSE}
+no <- c(1, 2, 3, 4)
+
+part_id <- c("BBa_K3447001", 
+             "BBa_K3447004",
+             "BBa_K3447112",
+             "BBa_K3447133")
+part_name <- c("Arabinose sensing system",
+               "kanR",
+               "light-off induced system",
+               "light-on induced system")
+part_type <- c("Composite",
+"Coding",
+"Composite",
+"Composite")
+
+team_id <- c(1, 1, 1, 1)
+
+igem_part <- data.frame(no,
+                        part_id, 
+                        part_name,
+                        part_type, 
+                        team_id)
+
+knitr::kable(igem_part)
+```
+
+Cloning protocol
+
+Plasmid 5 Construct plasmids pSB1C3-sfGFP and transform them into our engineering cells as Bacteria A. Incubate the same amount of Bacteria A in several culture mediums. Observe and measure the fluorescence produced by sfGFP under the microscope at the beginnin g and at different time spots throughout the incubation. Collect data and analyze to check if sfGFP works normally.
+
+Characterization conditions
+
+```{r, echo=FALSE}
+no <- c(1,2,3)
+Reporter <- c("sfGFP",
+            "sfGFP",
+            "sfGFP")
+Strain <- c("E.coli DH5alpha",
+            "E.coli DH5alpha",
+            "E.coli DH5alpha")
+
+Arabinose_conc <- c("0.02 g/mL",
+                    "0.20 g/mL",
+                    "2.00 g/mL")
+
+Measurement_times_h <-c("0,3,6,9,12",
+                     "0,3,6,9,12",
+                     "0,3,6,9,12")
+
+conditions <- data.frame(no,
+                        Reporter,
+                        Strain, 
+                        Arabinose_conc,
+                        Measurement_times_h)
+
+knitr::kable(conditions)
+```
+
+Results.
+
+![](Screenshot%202021-04-04%20175747.jpg)
