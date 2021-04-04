@@ -1,6 +1,2 @@
----
-title: "Readme"
-output: html_document
----
-
+# iGEM
 [iGEM part](igem_part.html)
