@@ -6,8 +6,7 @@ output: html_document
 ---
 
 ```{r}
-igem_team <- read.csv("igem_promoter.csv")
-igem_team
+read.csv("igem_promoter.csv")
 ```
 
 ```{r}
@@ -15,8 +14,19 @@ library(readxl)
 
 igem_team <- read_excel("igem_promoter.xlsx", sheet=1, skip = 0, col_names=T
                    )
-igem_promoter <- read_excel("igem_promoter.xlsx", sheet=2, skip = 0, col_names=T
+
+
+
+igem_part <- read_excel("igem_promoter.xlsx", sheet=2, skip = 0, col_names=T
                    )
-igem_promoter
+igem_obs <-read_excel("igem_promoter.xlsx", sheet=3, skip=0, col_names = T)
+igem_team
+```
+```{r}
+igem_part
+```
+
+```{r}
+igem_obs
 ```
 

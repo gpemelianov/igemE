@@ -171,41 +171,56 @@ pre code {
 </div>
 
 
-<pre class="r"><code>igem_team &lt;- read.csv(&quot;igem_promoter.csv&quot;)
-igem_team</code></pre>
-<pre><code>##                   id
-## 1        BOKU-Vienna
-## 2  Baltimore_BioCrew
-##                                                                                               team_name
-## 1 help people dealing with sepsis caused by Lipopolysaccharides (LPS) from gram-negative bacteria lysis
-## 2                                 To repopulate the microbiome after antibiotic treatment which in turn
-##                                           project
-## 1                                            2020
-## 2  will fortify the gut against bacterial disease
-##                                     year
-## 1 https://2020.igem.org/Team:BOKU-Vienna
-## 2                                   2019
-##                                           wiki
-## 1                                             
-## 2 https://2019.igem.org/Team:Baltimore_BioCrew</code></pre>
+<pre class="r"><code>read.csv(&quot;igem_promoter.csv&quot;)</code></pre>
+<pre><code>## Warning in read.table(file = file, header = header, sep = sep, quote = quote, :
+## incomplete final line found by readTableHeader on &#39;igem_promoter.csv&#39;</code></pre>
+<pre><code>##   id    team_name                     project year
+## 1  1  Jilin_China                       iGAME 2020
+## 2  2      BHSF_ND Protector a bistable system 2019
+##                                     wiki
+## 1 https://2020.igem.org/Team:Jilin_China
+## 2     https://2019.igem.org/Team:BHSF_ND</code></pre>
 <pre class="r"><code>library(readxl)
 
 igem_team &lt;- read_excel(&quot;igem_promoter.xlsx&quot;, sheet=1, skip = 0, col_names=T
                    )
-igem_promoter &lt;- read_excel(&quot;igem_promoter.xlsx&quot;, sheet=2, skip = 0, col_names=T
+
+
+
+igem_part &lt;- read_excel(&quot;igem_promoter.xlsx&quot;, sheet=2, skip = 0, col_names=T
                    )
-igem_promoter</code></pre>
-<pre><code>## # A tibble: 8 x 8
-##      id Bbid    type      link              backbone device_id team_name   user 
-##   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;             &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;
-## 1     1 BBa_J2… Promoter  http://parts.ige… NA       D0001     BOKU-Vienna yoo-…
-## 2     2 BBa_J2… Promoter  http://parts.ige… NA       D0001     BOKU-Vienna yoo-…
-## 3     3 BBa_B1… Terminat… http://parts.ige… NA       D0001     BOKU-Vienna yoo-…
-## 4     4 BBa_J0… Reporter… http://parts.ige… NA       D0001     BOKU-Vienna yoo-…
-## 5     5 BBa_J2… Promoter  http://parts.ige… NA       D0002     Baltimore_… yoo-…
-## 6     6 BBa_J2… Promoter  http://parts.ige… NA       D0002     Baltimore_… yoo-…
-## 7     7 BBa_B1… Terminat… http://parts.ige… NA       D0002     Baltimore_… yoo-…
-## 8     8 BBa_J0… Reporter… http://parts.ige… NA       D0002     Baltimore_… yoo-…</code></pre>
+igem_obs &lt;-read_excel(&quot;igem_promoter.xlsx&quot;, sheet=3, skip=0, col_names = T)
+igem_team</code></pre>
+<pre><code>## # A tibble: 2 x 5
+##      id team_name   project                  year wiki                          
+##   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;                         
+## 1     1 Jilin_China iGAME                    2020 https://2020.igem.org/Team:Ji…
+## 2     2 BHSF_ND     Protector a bistable s…  2019 https://2019.igem.org/Team:BH…</code></pre>
+<pre class="r"><code>igem_part</code></pre>
+<pre><code>## # A tibble: 6 x 8
+##      id Bbid     type    link             backbone device_id team_name   user   
+##   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;  
+## 1     1 BBa_I05… Promot… http://parts.ig… NA       D0001     BOKU-Vienna gpemel…
+## 2     2 BBa_B00… RBS     http://parts.ig… NA       D0001     BOKU-Vienna gpemel…
+## 3     3 BBa_K25… sfGFP   http://parts.ig… NA       D0001     BOKU-Vienna gpemel…
+## 4     4 BBa_B00… Termin… http://parts.ig… NA       D0001     BOKU-Vienna gpemel…
+## 5     5 BBa_I05… Promot… http://parts.ig… pSC101   D0002     Baltimore_… gpemel…
+## 6     6 BBa_K32… msfGFP  http://parts.ig… pSC101   D0002     Baltimore_… gpemel…</code></pre>
+<pre class="r"><code>igem_obs</code></pre>
+<pre><code>## # A tibble: 10 x 11
+##       id strain indc    conc concunit value valunit  incubhr incubtemp device_id
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;    
+##  1     1 E.coli Arabi… 0.02  mM        3000 Fluores…      12 NA        D0001    
+##  2     2 E.coli Arabi… 0.2   mM        8200 Fluores…      12 NA        D0001    
+##  3     3 E.coli Arabi… 2     mM        8000 Fluores…      12 NA        D0001    
+##  4     4 E.coli Arabi… 0     mM         250 a.u.           4 37        D0002    
+##  5     5 E.coli Arabi… 0.001 mM         500 a.u.           4 37        D0002    
+##  6     6 E.coli Arabi… 0.005 mM         600 a.u.           4 37        D0002    
+##  7     7 E.coli Arabi… 0.01  mM         750 a.u.           4 37        D0002    
+##  8     8 E.coli Arabi… 0.05  mM        2000 a.u.           4 37        D0002    
+##  9     9 E.coli Arabi… 0.1   mM        5000 a.u.           4 37        D0002    
+## 10    10 E.coli Arabi… 1     mM       10000 a.u.           4 37        D0002    
+## # … with 1 more variable: link &lt;chr&gt;</code></pre>
 
 
 
