@@ -60,7 +60,7 @@ igem_team1 <- data.frame(id,
                         project, 
                         year, 
                         wiki)
-igem_team2 <-data.frame (id="1",
+igem_team2 <-data.frame (id= 1,
                         team_name = "BHSF_ND",
                         project = "Protector a bistable system",
                         year = "2019",
@@ -68,7 +68,7 @@ igem_team2 <-data.frame (id="1",
 # error
 #bind_rows(igem_team1, igem_team2)
 
-id <- c("1")
+id <- c(1)
 team_name <- c("Jilin_China")
 project <- c("iGAME")
 year <- c("2020")
@@ -122,35 +122,48 @@ igem_part
 
 ```{r}
 id <- c(1:3)
-strain <- rep("E.coli", length(id))
-indc <- rep("Arabinose", length(id))
+strain <- rep("E.coli", length(3))
+indc <- rep("Arabinose", length(3))
 conc <- c(0.02, 0.20, 2.00)
+concunit <- rep("mM", length(id))
 value <- c(3000, 8200, 8000)
-valunit <- rep("Fluorescence", length(id))
-incubhr <- rep(12, length(id))
-incubtemp <- rep("-", length(id))
+valunit <- rep("Fluorescence", length(3))
+incubhr <- rep(12, length(3))
+incubtemp <- rep(NA, length(3))
 device_id <- rep("D0001", length(id))
 link <- rep("https://2020.igem.org/Team:Jilin_China/Proof_Of_Concept", length (id))
 
-igem_obs1 <- data.frame(id, strain, indc, conc, value,
+igem_obs1 <- data.frame(id, strain, indc, conc, concunit, value,
                         valunit, incubhr, incubtemp,
                        device_id, link)
 
-igem_obs2 <- data.frame(id = 1:7,
-             strain = c("E. coli", "E. coli","E. coli","E. coli","E. coli","E. coli","E. coli"),
-             indc = c("Arabinose","Arabinose","Arabinose","Arabinose","Arabinose","Arabinose","Arabinose"),
+igem_obs2 <- data.frame(id = c(1:7),
+             strain = rep("E. coli", length(7)),
+             indc = rep("Arabinose",length(7)),
              conc = c(0, 0.001, 0.005, 0.01, 0.05, 0.1, 1),
-             concunit = rep("mM", length(id)),
+             concunit = rep("mM", length(7)),
              value = c(250, 500, 600, 750, 2000, 5000, 10000),
-             valunit = c("a.u."),
-             incubhr = rep(4, length(id)),
-             incubtemp = rep(37, length(id)),
-             device_id = paste0("D", sprintf("%04d", 1)),
-             link = c("https://2019.igem.org/Team:BHSF_ND/Project/Leakage#ct3"))
+             valunit = rep("a.u.", length(7)),
+             incubhr = rep(4, length(7)),
+             incubtemp = rep(37, length(7)),
+             device_id = rep("D0001", length(7)),
+             link = rep("https://2019.igem.org/Team:BHSF_ND/Project/Leakage#ct3", length(7)))
 
 igem_obs <- bind_rows(igem_obs1, igem_obs2, .id="id")
 igem_obs
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
