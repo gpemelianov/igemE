@@ -1,0 +1,22 @@
+---
+title: "Untitled"
+author: "Emelianov Georgii"
+date: "4/15/2021"
+output: html_document
+---
+
+```{r}
+igem_team <- read.csv("igem_promoter.csv")
+igem_team
+```
+
+```{r}
+library(readxl)
+
+igem_team <- read_excel("igem_promoter.xlsx", sheet=1, skip = 0, col_names=T
+                   )
+igem_promoter <- read_excel("igem_promoter.xlsx", sheet=2, skip = 0, col_names=T
+                   )
+igem_promoter
+```
+
