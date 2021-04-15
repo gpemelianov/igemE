@@ -29,14 +29,14 @@ igem_part
 ```
 ```{r}
 igem_obs <- data.frame(id = 1:7,
-             strain = rep("E. coli", length(id)),
-             indc = rep("Ara", length(id)),
+             strain = rep("E. coli", length(7)),
+             indc = rep("Ara", length(7)),
              conc = c(0, 0.001, 0.005, 0.01, 0.05, 0.1, 1),
-             concunit = rep("mM", length(id)),
+             concunit = rep("mM", length(7)),
              value = c(250, 500, 600, 750, 2000, 5000, 10000),
              valunit = c("a.u."),
-             incubhr = rep(4, length(id)),
-             incubtemp = rep(37, length(id)),
+             incubhr = rep(4, length(7)),
+             incubtemp = rep(37, length(7)),
              device_id = paste0("D", sprintf("%04d", 1)),
              link = c("https://2019.igem.org/Team:BHSF_ND/Project/Leakage#ct3"))
 igem_obs
