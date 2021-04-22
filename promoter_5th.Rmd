@@ -1,0 +1,82 @@
+---
+title: "Untitled"
+author: "Georgii"
+date: "21 04 2021"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+download.file
+
+dir.create("download")
+dir.create("download/promoters")
+
+download.file("https://github.com/Yoo-BH/igemE/raw/main/igem_promoters.xlsx", "download/promoters/yoo-bh.xlsx")
+download.file("https://github.com/TH-Kim310/igemE/raw/main/%EC%97%91%EC%85%80.xlsx", "download/promoters/th-kim310.xlsx")
+download.file("https://github.com/jinjulee119/igemE2/raw/main/igem_promoters.xlsx", "download/promoters/jinjulee119.xlsx")
+download.file("https://github.com/aputron/igemE/raw/main/igem_promoters.xlsx", "download/promoters/aputron.xlsx")
+download.file("https://github.com/gpemelianov/igemE/raw/main/igem_promoter.xlsx", "download/promoters/gpemelianov.xlsx")
+```
+
+Teams
+```{r}
+library(tidyverse)
+library(readxl)
+destdir <- "download/promoters/"
+excel_files <- dir("download/promoters")
+excel_file_names <- paste("download/promoters/", excel_files, sep="")
+igem_team1 <- read_excel(paste0(destdir,"yoo-bh.xlsx"), sheet=1, skip = 0, col_names=T)
+igem_team2 <- read_excel(paste0(destdir,"aputron.xlsx"), sheet=1, skip = 0, col_names=T)
+igem_team3 <- read_excel(paste0(destdir,"th-kim310.xlsx"), sheet=1, skip = 0, col_names=T)
+igem_team4 <- read_excel(paste0(destdir,"jinjulee119.xlsx"), sheet=1, skip = 0, col_names=T)
+igem_team5 <- read_excel(paste0(destdir, "gpemelianov.xlsx"), sheet=1, skip = 0, col_names=T)
+igem_team1$id <- as.character(igem_team1$id, na.omit=F)
+igem_team2$id <- as.character(igem_team2$id, na.omit=F)
+igem_team3$id <- as.character(igem_team3$id, na.omit=F)
+igem_team4$id <- as.character(igem_team4$id, na.omit=F)
+igem_team5$id <- as.character(igem_team5$id, na.omit=F)
+igem_team <- bind_rows(igem_team1, igem_team2, igem_team3, igem_team4, igem_team5)
+igem_team
+```
+Parts
+```{r}
+library(tidyverse)
+library(readxl)
+igem_part1 <- read_excel(paste0(destdir,"yoo-bh.xlsx"), sheet=2, skip = 0, col_names=T)
+igem_part2 <- read_excel(paste0(destdir,"aputron.xlsx"), sheet=2, skip = 0, col_names=T)
+igem_part3 <- read_excel(paste0(destdir,"th-kim310.xlsx"), sheet=2, skip = 0, col_names=T)
+igem_part4 <- read_excel(paste0(destdir,"jinjulee119.xlsx"), sheet=2, skip = 0, col_names=T)
+igem_part5 <- read_excel(paste0(destdir,"gpemelianov.xlsx"), sheet=2, skip = 0, col_names=T)
+igem_part1$id <- as.character(igem_part1$id, na.omit=F)
+igem_part2$id <- as.character(igem_part2$id, na.omit=F)
+igem_part3$id <- as.character(igem_part3$id, na.omit=F)
+igem_part4$id <- as.character(igem_part4$id, na.omit=F)
+igem_part5$id <- as.character(igem_part5$id, na.omit=F)
+igem_part <- bind_rows(igem_part1, igem_part2, igem_part3, igem_part4, igem_part5)
+igem_part
+```
+Observation
+```{r}
+library(tidyverse)
+library(readxl)
+igem_obs1 <- read_excel(paste0(destdir,"yoo-bh.xlsx"), sheet=3, skip = 0, col_names=T)
+igem_obs2 <- read_excel(paste0(destdir,"aputron.xlsx"), sheet=3, skip = 0, col_names=T)
+igem_obs3 <- read_excel(paste0(destdir,"th-kim310.xlsx"), sheet=3, skip = 0, col_names=T)
+igem_obs4 <- read_excel(paste0(destdir,"jinjulee119.xlsx"), sheet=3, skip = 0, col_names=T)
+igem_obs5 <- read_excel(paste0(destdir, "gpemelianov.xlsx"), sheet=3, skip = 0, col_names=T)
+igem_obs1$id <- as.character(igem_obs1$id, na.omit=F)
+igem_obs2$id <- as.character(igem_obs2$id, na.omit=F)
+igem_obs3$id <- as.character(igem_obs3$id, na.omit=F)
+igem_obs4$id <- as.character(igem_obs4$id, na.omit=F)
+igem_obs5$id <- as.character(igem_obs5$id, na.omit=F)
+igem_obs2$conc <- as.character(igem_obs2$conc, na.omit=F)
+igem_obs4$conc <- as.character(igem_obs4$conc, na.omit=F)
+igem_obs5$conc <- as.character(igem_obs5$conc, na.omit=F)
+igem_obs5$incubhr <- as.character(igem_obs5$incubhr, na.omit=F)
+igem_obs <- bind_rows(igem_obs1, igem_obs2, igem_obs3, igem_obs4, igem_obs5)
+igem_obs
+```
+
+
